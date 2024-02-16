@@ -72,14 +72,10 @@
   }
   p {
     cursor: pointer;
-    background-color: rgb(233, 233, 233);
-    padding: 5px;
     border-radius: 4px;
+    padding: 10px 0px;
   }
-  :hover {
-    background-color: tomato;
-    color: white;
-  }
+
 }
 
 .popup {
@@ -160,4 +156,10 @@
   img {
     width: 20px;
   }
+}
+
+
+.active-tab{
+  color: 7052ff;
+  border-bottom: 3px solid #7052ff;
 }
