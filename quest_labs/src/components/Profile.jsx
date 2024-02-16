@@ -139,30 +139,36 @@ const close = () => [
         </div>
 
         <div className="explorer">
+
+
           <div>
             <h5>{data}</h5>
             <p>Points</p>
           </div>
+
           <div>
           <h5>#{rank}</h5>
             <p>Rank</p>
           </div>
+
           <div>
           <h5>{tier}</h5>
             <p>Level</p>
           </div>
+
+
         </div>
 
         <div className="member">
-          <p onClick={handle_click}>Member</p>
-          <p onClick={handle_click}>Badges</p>
-          <p onClick={handle_click}>Point History</p>
+          <p >Member</p>
+          <p >Badges</p>
+          <p>Point History</p>
        
         </div>
         <div className="badges_img">
-            <img src={badge4} alt="" />
-            <img src={badge5} alt="" />
-            <img src={badge7} alt="" />
+            <img onClick={handle_click} src={badge4} alt="" />
+            <img onClick={handle_click} src={badge5} alt="" />
+            <img onClick={handle_click} src={badge7} alt="" />
             </div>
       </div>
 
