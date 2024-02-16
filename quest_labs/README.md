@@ -25,8 +25,8 @@ Ques_Labs is a assignment for the user profile
 
 ## Screenshots
 
-![Screenshot 1](quest_labs/src/assets/pic1.png)
-![Screenshot 2](quest_labs/src/assets/pic2.png)
+![Screenshot 1](src/assets/pic1.png)
+![Screenshot 2](src/assets/pic2.png)
 
 
 ## Deployment
