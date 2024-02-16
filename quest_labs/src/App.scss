@@ -1,0 +1,122 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.profile_container {
+  background-color: #7052ff;
+  width: 430px;
+  height: 700px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .item {
+    position: relative;
+    margin-top: 80px;
+    max-width: 400px;
+    height: 80%;
+    background-color: white;
+    border-radius: 8px;
+    flex-direction: column;
+    padding-top: 30px;
+
+    .info {
+      // border: 1px solid red;
+      text-align: center;
+      margin-bottom: 10px;
+      h1 {
+        margin-top: 60px;
+      }
+
+      .rich_img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: absolute;
+        top: -30px;
+        left: 130px;
+      }
+    }
+  }
+
+  .explorer {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    div {
+      background-color: #7052ff;
+      height: 80px;
+      width: 80px;
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.member {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  img {
+    width: 40px;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: -70px;
+  left: 0;
+  top: 100px;
+  left: 200px;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.main_cont {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(154, 41, 41);
+  border-radius: 8px;
+  padding: 20px;
+
+  img {
+    width: 80px;
+  }
+
+  .bad_unlock {
+    display: flex;
+    gap: 5px;
+    img {
+      width: 20px;
+    }
+  }
+}
+
+.badges_img {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 80px;
+  }
+}
+
+
+.cross{
+  display: none;
+}
