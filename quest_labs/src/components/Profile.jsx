@@ -135,6 +135,7 @@ function Profile() {
 
   return (
     <div className="profile_container">
+      <h1 className="profile">Profile</h1>
       {show && <Popup close={close} badge4={badge4} badge7={badge7} />}
       <div className="item">
         <div className="info">
