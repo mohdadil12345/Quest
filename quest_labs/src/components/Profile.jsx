@@ -4,10 +4,15 @@ function Profile() {
 
 
   const [img, setimg] = useState("");
-  const [show, swtshow] = useState(true)
+  const [show, setShow] = useState(false);
   const [data, setdata] = useState("")
   const [tier, settier] = useState("")
-  const [badge, setbadge] = useState([])
+  const [badge4, setbadge4] = useState("")
+  const [badge5, setbadge5] = useState("")
+  const [badge7, setbadge7] = useState("")
+  const [rank, setrank] = useState("")
+
+
 
   const fetch_data = async () => {
     let headersList = {
@@ -59,7 +64,8 @@ function Profile() {
        });
        
        let data = await response.json();
-       console.log("3",data);
+       console.log("3",data.data);
+       setrank(data.data.position)
        
   }
   const fetch4 = async() => {
@@ -89,8 +95,10 @@ function Profile() {
        });
        
        let data = await response.json();
-       console.log("5", data.data);
-       setbadge(data.data)
+       console.log("5", data.data[0].imageUrl);
+       setbadge4(data.data[4].imageUrl)
+       setbadge5(data.data[2].imageUrl)
+       setbadge7(data.data[7].imageUrl)
     //    setbadges(data)
        
   }
@@ -107,7 +115,7 @@ function Profile() {
 
 
 const handle_click = () => [
-    swtshow(!show)
+    setShow(!show)
 ]
 
 
@@ -115,7 +123,7 @@ const handle_click = () => [
 
     <div className="profile_container">
    
-   {show && <Popup/>}
+   {show && <Popup badge4={badge4} badge7={badge7}/>}
       <div className="item">
         <div className="info">
        
@@ -132,25 +140,25 @@ const handle_click = () => [
             <p>Points</p>
           </div>
           <div>
-          <h5>{data}</h5>
+          <h5>#{rank}</h5>
             <p>Rank</p>
           </div>
           <div>
-          <h5>{data}</h5>
+          <h5>{tier}</h5>
             <p>Level</p>
           </div>
         </div>
 
         <div className="member">
-          <button onClick={handle_click}>Member</button>
-          <button onClick={handle_click}>Badges</button>
-          <button onClick={handle_click}>Point History</button>
+          <p onClick={handle_click}>Member</p>
+          <p onClick={handle_click}>Badges</p>
+          <p onClick={handle_click}>Point History</p>
        
         </div>
         <div className="badges_img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMU-S6g2RbGd67AlAU_BwFhaoJ524dunP4w&usqp=CAU" alt="" />
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuWH2KrHkJzhF38lmy5u1AjiVqT2t7e5cs0CAt9RkQPw&s" alt="" />
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRHsVgWpQ4Lw2sEcZ-BJuugYiUK5VNPUafp09Soy71B174_l_c6" alt="" />
+            <img src={badge4} alt="" />
+            <img src={badge5} alt="" />
+            <img src={badge7} alt="" />
             </div>
       </div>
 
