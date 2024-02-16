@@ -118,12 +118,16 @@ const handle_click = () => [
     setShow(!show)
 ]
 
+const close = () => [
+    setShow(false)
+]
+
 
   return (
 
     <div className="profile_container">
    
-   {show && <Popup badge4={badge4} badge7={badge7}/>}
+   {show && <Popup close ={close} badge4={badge4} badge7={badge7}/>}
       <div className="item">
         <div className="info">
        

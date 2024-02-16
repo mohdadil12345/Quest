@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-function Popup({badge4, badge7}) {
+function Popup({badge4, badge7, close}) {
   const [showw, setshoww] = useState(true);
 
   const handle_cross = () => {
-    setshoww(!showw); 
+ 
+     close()
+
   };
 
   return (
