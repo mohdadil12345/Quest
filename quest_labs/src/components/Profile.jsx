@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Popup from "./Popup";
 function Profile() {
   const [img, setimg] = useState("");
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [data, setdata] = useState("");
   const [tier, settier] = useState("");
   const [badge4, setbadge4] = useState("");
