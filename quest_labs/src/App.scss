@@ -5,15 +5,16 @@
 }
 
 .profile_container {
+  align-items: center;
   background-color: #7052ff;
-  width: 430px;
-  height: 700px;
-  margin: 30px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
+  margin: auto;
   position: relative;
+  width: 100%;
+  max-width: 430px;
 
   .item {
     position: relative;
@@ -34,12 +35,16 @@
       }
 
       .rich_img {
-        width: 70px;
-        height: 70px;
         border-radius: 50%;
+        height: 70px;
+        left: 50%;
         position: absolute;
-        top: -30px;
-        left: 130px;
+        top: 0;
+        width: 70px;
+        transform: translate(-50%, -50%);
+        border: 2px solid #ffffff;
+        background: white;
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
       }
     }
   }
@@ -49,6 +54,10 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    gap: 20px;
+
+  
+
 
     div {
       background-color: #7052ff;
@@ -171,3 +180,10 @@
 }
 
 
+@media only screen and (max-width: 600px) {
+
+
+
+
+
+}

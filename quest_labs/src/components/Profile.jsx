@@ -118,7 +118,7 @@ function Profile() {
     );
 
     let data = await response.json();
-    console.log("5", data.data[0].imageUrl);
+    console.log("5", data.data);
     setbadge4(data.data[4].imageUrl);
     setbadge5(data.data[2].imageUrl);
     setbadge7(data.data[7].imageUrl);
