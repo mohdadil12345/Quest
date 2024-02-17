@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-function Popup({badge4, badge7, close}) {
-  const [showw, setshoww] = useState(true);
+function Popup({badge4,show, badge7, handle_click, popupbadg}) {
+
 
   const handle_cross = () => {
  
-     close()
+    handle_click()
 
   };
 
   return (
-    <div  className={showw ? "popup" : "cross"}>
-      <div  className={"main_cont"}>
+    <div  className={show ? "popup" : "cross"}>
+      <div  style={{position:"absolute", visibility: show ? "visible" : "hidden", transition : "top 1s",  top: show ? "170px" : "-100%"}}  className={"main_cont"}>
         <p className="close" onClick={handle_cross}>❌</p>
         <img
           className="img1"
-          src={badge4}
+          src={popupbadg}
           alt=""
         />
         <div className="bad_unlock">

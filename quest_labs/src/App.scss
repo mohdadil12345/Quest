@@ -19,7 +19,6 @@
   .item {
     position: relative;
     margin-top: 80px;
-    // max-width: 500px;
     height: 80%;
     background-color: white;
     border-radius: 8px;
@@ -27,7 +26,6 @@
     padding-top: 30px;
 
     .info {
-      // border: 1px solid red;
       text-align: center;
       margin-bottom: 10px;
       h1 {
@@ -81,9 +79,11 @@
     width: 40px;
   }
   p {
-    cursor: pointer;
     border-radius: 4px;
-    padding: 10px 0px;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: center;
+    min-width: 84px;
   }
 
 }
@@ -105,8 +105,8 @@
 
   .close {
     position: absolute;
-    top: 270px;
-    right: 45px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
   }
 }
@@ -154,12 +154,12 @@
 }
 
 .cross {
-  display: none;
+  top: -100%;
   cursor: pointer;
 }
 
 .blur {
-  filter: blur(2px); /* Adjust the blur amount as needed */
+  filter: blur(2px);
 }
 
 .badg7 {
@@ -180,10 +180,3 @@
 }
 
 
-@media only screen and (max-width: 600px) {
-
-
-
-
-
-}

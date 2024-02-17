@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Popup from "./Popup";
 function Profile() {
   const [img, setimg] = useState("");
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [data, setdata] = useState("");
   const [tier, settier] = useState("");
   const [badge4, setbadge4] = useState("");
   const [badge5, setbadge5] = useState("");
   const [badge7, setbadge7] = useState("");
   const [rank, setrank] = useState("");
+  const [popupbadg, setpopupbadg] = useState("");
 
   const [activeTab, setActiveTab] = useState("Badges");
 
@@ -16,13 +17,19 @@ function Profile() {
     setActiveTab(tab);
   };
 
-  const handle_click = () => {
+  const handle_click = (bd) => {
     setShow(!show);
+
+    if (bd == 1) {
+      setpopupbadg(badge4);
+    } else if (bd == 2) {
+      setpopupbadg(badge5);
+    } else {
+      setpopupbadg(badge7);
+    }
+
   };
 
-  const close = () => {
-    setShow(false);
-  };
 
   const fetch_data = async () => {
     let headersList = {
@@ -40,7 +47,6 @@ function Profile() {
     );
 
     let data = await res.json();
-    console.log("1", data);
     setimg(data.data.imageUrl);
   };
 
@@ -60,7 +66,6 @@ function Profile() {
     );
 
     let data = await response.json();
-    console.log("2", data);
     setdata(data.data);
     settier(data.tier);
   };
@@ -81,7 +86,6 @@ function Profile() {
     );
 
     let data = await response.json();
-    console.log("3", data.data);
     setrank(data.data.position);
   };
   const fetch4 = async () => {
@@ -100,7 +104,6 @@ function Profile() {
     );
 
     let data = await response.json();
-    console.log("4", data.data);
   };
   const fetch5 = async () => {
     let headersList = {
@@ -118,7 +121,6 @@ function Profile() {
     );
 
     let data = await response.json();
-    console.log("5", data.data);
     setbadge4(data.data[4].imageUrl);
     setbadge5(data.data[2].imageUrl);
     setbadge7(data.data[7].imageUrl);
@@ -136,7 +138,15 @@ function Profile() {
   return (
     <div className="profile_container">
       <h1 className="profile">Profile</h1>
-      {show && <Popup close={close} badge4={badge4} badge7={badge7} />}
+      {
+        <Popup
+          popupbadg={popupbadg}
+          show={show}
+          handle_click={handle_click}
+          badge4={badge4}
+          badge7={badge7}
+        />
+      }
       <div className="item">
         <div className="info">
           <img className="rich_img" src={img} alt="" />
@@ -182,25 +192,25 @@ function Profile() {
         </div>
         {activeTab === "Member" && (
           <div className="member-content badges_img">
-            <img onClick={handle_click} src={badge4} alt="" />
-            <img onClick={handle_click} src={badge5} alt="" />
-            <img onClick={handle_click} src={badge7} alt="" />
+            <img onClick={() => handle_click(2)} src={badge5} alt="" />
+            <img onClick={() => handle_click(1)} src={badge4} alt="" />
+            <img onClick={() => handle_click(3)} src={badge7} alt="" />
           </div>
         )}
 
         {activeTab === "Badges" && (
           <div className="badges_img">
-            <img onClick={handle_click} src={badge4} alt="" />
-            <img onClick={handle_click} src={badge7} alt="" />
-            <img onClick={handle_click} src={badge5} alt="" />
+            <img onClick={() => handle_click(1)} src={badge4} alt="" />
+            <img onClick={() => handle_click(2)} src={badge5} alt="" />
+            <img onClick={() => handle_click(3)} src={badge7} alt="" />
           </div>
         )}
 
         {activeTab === "PointHistory" && (
           <div className="point-history-content badges_img">
-            <img onClick={handle_click} src={badge5} alt="" />
-           <img onClick={handle_click} src={badge4} alt="" />
-            <img onClick={handle_click} src={badge7} alt="" />
+            <img onClick={() => handle_click(3)} src={badge7} alt="" />
+            <img onClick={() => handle_click(2)} src={badge5} alt="" />
+            <img onClick={() => handle_click(1)} src={badge4} alt="" />
           </div>
         )}
       </div>
